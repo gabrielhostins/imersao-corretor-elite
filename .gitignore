@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Config de preview local (não vai para produção)
+.claude/
+launch.json
+
+# Arquivos temporários
+*.tmp
+*.log
+*.bak

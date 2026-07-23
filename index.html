@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corretor de Elite | Imersão Gratuita para Corretores de Imóveis</title>
+<meta name="description" content="Imersão gratuita para corretores que querem se transformar em especialistas em vendas. Com Leonardo Farias e Genaldo Oliani. Vagas limitadas.">
+<!-- Fonte: Inter Tight -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
+<!-- Ícones Lucide -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --black:#0b0b0f; --black2:#121218; --black3:#1a1a22;
+    --gold:#d4a942; --gold-2:#f0cd7a; --gold-deep:#8f6b1d;
+    --cream:#f4efe6; --text-dim:#9d9da8; --text-soft:#c9c9d2;
+    --glass:rgba(255,255,255,.045);
+    --glass-border:rgba(255,255,255,.09);
+    --radius:22px;
+    --font-display:'Inter Tight',sans-serif;
+    --font-body:'Inter Tight',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  /* REGRA GLOBAL: peso máximo de fonte em todo o site é 600 */
+  b,strong,h1,h2,h3,h4,h5,h6{font-weight:600}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);background:var(--black);color:var(--cream);line-height:1.6;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--gold);color:var(--black)}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* Grain sutil por cima de tudo */
+  body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+  main,header,footer{position:relative;z-index:2}
+
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.04;letter-spacing:-.025em}
+  .grad-text{background:linear-gradient(100deg,var(--gold-2) 10%,var(--gold) 55%,#a8842e 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Ícones lucide */
+  .lucide{width:22px;height:22px;stroke-width:1.8}
+
+  /* ========== BOTÕES ========== */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;font-family:var(--font-body);font-weight:600;font-size:15.5px;border-radius:100px;padding:17px 32px;transition:all .3s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+  .btn-gold{background:linear-gradient(120deg,var(--gold-2),var(--gold) 60%);color:#141005;box-shadow:0 0 0 1px rgba(240,205,122,.25),0 12px 32px -8px rgba(212,169,66,.55)}
+  .btn-gold::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.55) 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s ease}
+  .btn-gold:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgba(240,205,122,.4),0 20px 44px -8px rgba(212,169,66,.7)}
+  .btn-gold:hover::before{transform:translateX(120%)}
+  .btn-ghost{background:var(--glass);border:1px solid var(--glass-border);color:var(--cream);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .btn-ghost:hover{border-color:rgba(240,205,122,.45);background:rgba(212,169,66,.08);transform:translateY(-3px)}
+  .btn .lucide{width:18px;height:18px}
+
+  /* ========== HEADER GLASS ========== */
+  header{position:sticky;top:0;z-index:90;background:rgba(11,11,15,.55);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--glass-border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .logo{display:inline-flex;align-items:center;gap:12px}
+  .logo-icon{width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 4px 14px rgba(212,169,66,.45));transition:filter .3s}
+  .logo:hover .logo-icon{filter:drop-shadow(0 4px 20px rgba(212,169,66,.75))}
+  .logo-text{display:flex;flex-direction:column;line-height:1}
+  .logo-text .l1{font-size:9.5px;letter-spacing:4px;color:var(--text-dim);font-weight:600;text-transform:uppercase;margin-bottom:4px}
+  .logo-text .l2{font-family:var(--font-display);font-weight:600;font-size:20px;color:#fff;white-space:nowrap}
+  .logo-text .l2 .gold{color:var(--gold)}
+  .nav .btn{padding:12px 24px;font-size:13.5px}
+
+  /* ========== HERO ========== */
+  .hero{position:relative;overflow:hidden;background:var(--black);padding:0}
+  .hero-bg{position:absolute;inset:0;background:url('imagens/hero-bg.jpg') center/cover no-repeat;opacity:.14;filter:saturate(.4) contrast(1.05)}
+  .hero-veil{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(212,169,66,.16),transparent 60%),linear-gradient(180deg,rgba(11,11,15,.4),rgba(11,11,15,.05) 40%,var(--black) 96%)}
+  .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+  .orb-1{width:480px;height:480px;background:rgba(212,169,66,.17);top:-180px;right:-120px}
+  .orb-2{width:380px;height:380px;background:rgba(212,169,66,.08);bottom:-140px;left:-140px}
+  .hero-inner{position:relative;z-index:2;padding:96px 0 72px;max-width:1040px;margin:0 auto;text-align:center}
+
+  .badge{display:inline-flex;align-items:center;gap:10px;background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--gold-2);padding:10px 22px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.14em;margin-bottom:34px;text-transform:uppercase}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold);animation:pulseDot 1.6s ease-in-out infinite}
+  @keyframes pulseDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+
+  .hero h1{font-size:clamp(32px,4.3vw,52px);margin-bottom:24px;color:#fff}
+  .hero h1 .grad-text{font-weight:600}
+  .hero-break{display:none}
+  @media(min-width:901px){.hero-break{display:inline}}
+  .hero p.lead{font-size:clamp(16px,1.6vw,19px);color:var(--text-soft);max-width:640px;margin:0 auto 38px;font-weight:500}
+  .hero .sub{font-size:14.5px;color:var(--text-dim);margin-bottom:38px;font-weight:600;letter-spacing:.04em}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+  .hero-note{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--text-dim);font-weight:500}
+  .hero-note span{display:inline-flex;align-items:center;gap:7px}
+  .hero-note .lucide{width:15px;height:15px;color:var(--gold)}
+
+  /* Countdown glass */
+  .countdown-wrap{margin-top:52px}
+  .countdown-label{font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.22em;margin-bottom:16px;font-weight:600}
+  .countdown{display:flex;gap:12px;justify-content:center}
+  .countdown .unit{background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px;padding:16px 10px 12px;min-width:78px;text-align:center;position:relative;overflow:hidden}
+  .countdown .unit::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.08),transparent 45%);pointer-events:none}
+  .countdown .unit b{display:block;font-family:var(--font-display);font-weight:600;font-size:32px;color:var(--gold-2);line-height:1;font-variant-numeric:tabular-nums}
+  .countdown .unit span{font-size:9.5px;text-transform:uppercase;letter-spacing:.18em;color:var(--text-dim);font-weight:600;margin-top:5px;display:block}
+
+  /* Barra de vagas */
+  .scarcity{max-width:430px;margin:44px auto 0}
+  .scarcity-label{display:flex;justify-content:space-between;font-size:12px;color:var(--text-soft);text-transform:uppercase;letter-spacing:.1em;margin-bottom:9px;font-weight:600}
+  .scarcity-label b{color:var(--gold-2)}
+  .scarcity-bar{height:8px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden;border:1px solid var(--glass-border)}
+  .scarcity-fill{height:100%;width:87%;border-radius:100px;background:linear-gradient(90deg,var(--gold-deep),var(--gold) 60%,var(--gold-2));box-shadow:0 0 14px rgba(212,169,66,.6);animation:fillIn 1.4s cubic-bezier(.22,1,.36,1) both}
+  @keyframes fillIn{from{width:0}}
+
+  /* ========== MARQUEE ========== */
+  .marquee{background:linear-gradient(100deg,var(--gold-deep),var(--gold) 40%,var(--gold-2) 75%,var(--gold));padding:15px 0;overflow:hidden;white-space:nowrap;position:relative;transform:rotate(-.6deg) scale(1.01);margin:-6px 0}
+  .marquee-track{display:inline-flex;gap:44px;animation:scroll 26s linear infinite;will-change:transform}
+  .marquee span{display:inline-flex;align-items:center;gap:44px;font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:.16em;color:#171204;text-transform:uppercase}
+  .marquee .sep{font-size:11px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* ========== SEÇÕES ========== */
+  section{padding:96px 0;position:relative}
+  .sec-head{max-width:720px;margin:0 auto 56px;text-align:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .sec-head h2{font-size:clamp(30px,4.2vw,50px);color:#fff;margin-bottom:18px}
+  .sec-head p{color:var(--text-dim);font-size:17px;font-weight:500}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ========== DORES ========== */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .glass-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:36px 30px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .4s}
+  .glass-card::before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(255,255,255,.07),transparent 40%);pointer-events:none}
+  .glass-card:hover{transform:translateY(-6px);border-color:rgba(212,169,66,.38)}
+  .icon-chip{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,rgba(212,169,66,.22),rgba(212,169,66,.06));border:1px solid rgba(212,169,66,.3);margin-bottom:22px}
+  .icon-chip .lucide{color:var(--gold-2);width:24px;height:24px}
+  .glass-card h3{font-size:20px;margin-bottom:10px;color:#fff}
+  .glass-card p{color:var(--text-dim);font-size:15px;font-weight:500}
+
+  /* ========== CONTEÚDO ========== */
+  .learn{background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(212,169,66,.07),transparent 65%)}
+  .learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .learn-item{display:flex;gap:20px;align-items:flex-start;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:28px;transition:transform .35s cubic-bezier(.22,1,.36,1),border-color .35s}
+  .learn-item:hover{transform:translateX(6px);border-color:rgba(212,169,66,.35)}
+  .learn-item .num{flex-shrink:0;font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--gold);width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(212,169,66,.1);border:1px solid rgba(212,169,66,.28)}
+  .learn-item h3{font-size:17.5px;margin-bottom:6px;color:#fff}
+  .learn-item p{color:var(--text-dim);font-size:14.5px;font-weight:500}
+
+  /* ========== MENTORES ========== */
+  .mentor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:960px;margin:0 auto}
+  .mentor-card{text-align:center;padding:44px 38px}
+  .mentor-photo{width:148px;height:148px;margin:0 auto 24px;border-radius:50%;padding:4px;background:conic-gradient(from 140deg,var(--gold-2),var(--gold-deep),var(--gold),var(--gold-2))}
+  .mentor-photo .img-ph{width:100%;height:100%;border-radius:50%}
+  .mentor-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+  .mentor-card h3{font-size:26px;margin-bottom:6px;color:#fff}
+  .mentor-card .role{display:inline-flex;align-items:center;gap:7px;color:var(--gold-2);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:600;margin-bottom:18px}
+  .mentor-card .role .lucide{width:14px;height:14px}
+  .mentor-card p{color:var(--text-soft);font-size:15px;text-align:left;font-weight:500}
+
+  /* ========== PARA QUEM ========== */
+  .includes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .include-card{text-align:center;padding:34px 22px}
+  .include-card .icon-chip{margin:0 auto 18px}
+  .include-card h3{font-size:16.5px;margin-bottom:7px}
+  .include-card p{font-size:13.5px}
+
+  /* ========== DEPOIMENTOS ========== */
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .proof-card{padding:30px}
+  .proof-card .stars{display:flex;gap:3px;margin-bottom:16px}
+  .proof-card .stars .lucide{width:16px;height:16px;color:var(--gold);fill:var(--gold)}
+  .proof-card>p{color:var(--text-soft);font-size:14.5px;margin-bottom:22px;font-weight:500}
+  .proof-person{display:flex;align-items:center;gap:13px}
+  .proof-person .img-ph{width:46px;height:46px;border-radius:50%;padding:0}
+  .proof-person .img-ph span{display:none}
+  .proof-person .img-ph .ic{font-size:16px}
+  .proof-person b{font-size:14px;display:block;color:#fff;font-weight:600}
+  .proof-person span{font-size:12.5px;color:var(--text-dim)}
+
+  /* ========== CTA FINAL ========== */
+  .final{background:radial-gradient(ellipse 75% 65% at 50% 100%,rgba(212,169,66,.14),transparent 65%);text-align:center}
+  .final h2{font-size:clamp(32px,4.6vw,54px);color:#fff;margin-bottom:16px}
+  .final>.container>p{color:var(--text-dim);font-size:17px;max-width:580px;margin:0 auto 26px;font-weight:500}
+  .final .scarcity{margin:0 auto 44px}
+
+  .form-slot{max-width:530px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:28px;padding:44px 36px;position:relative;overflow:hidden}
+  .form-slot::before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(255,255,255,.08),transparent 45%);pointer-events:none}
+  .form-slot::after{content:"";position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .form-slot .tag{display:inline-flex;align-items:center;gap:7px;background:rgba(212,169,66,.12);color:var(--gold-2);border:1px dashed rgba(212,169,66,.5);padding:7px 16px;border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:18px;text-transform:uppercase;letter-spacing:.1em}
+  .form-slot h3{font-size:22px;margin-bottom:8px;color:#fff}
+  .form-slot p{color:var(--text-dim);font-size:14px;font-weight:500}
+  .form-placeholder{margin-top:24px;border:2px dashed rgba(255,255,255,.14);border-radius:18px;padding:52px 20px;color:var(--text-dim);font-size:14px;font-weight:500}
+
+  /* ========== FOOTER ========== */
+  footer{border-top:1px solid var(--glass-border);padding:52px 0 40px;text-align:center;color:var(--text-dim);font-size:14px}
+  footer .logo{justify-content:center;margin-bottom:14px}
+  footer .logo-icon{width:52px;height:52px}
+  footer .logo-text .l2{font-size:24px}
+  .copy{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.05);font-size:12.5px;color:#5c5c66}
+
+  /* ========== FLUTUANTES ========== */
+  .wa-float{position:fixed;bottom:26px;right:26px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);z-index:80;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  .wa-float:hover{transform:scale(1.1) rotate(6deg)}
+  .wa-float svg{width:30px;height:30px}
+
+  .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(11,11,15,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--glass-border);padding:13px 18px;z-index:85;align-items:center;justify-content:space-between;gap:12px}
+  .sticky-cta .txt b{display:block;font-size:13.5px;color:var(--gold-2);font-weight:600}
+  .sticky-cta .txt span{font-size:11px;color:var(--text-dim)}
+  .sticky-cta .btn{padding:12px 20px;font-size:12.5px;white-space:nowrap}
+
+  /* PLACEHOLDER DE IMAGEM, trocar pela foto real */
+  .img-ph{background:linear-gradient(140deg,#191920,#101016);border:2px dashed rgba(255,255,255,.14);border-radius:18px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#6a6a75;text-align:center;padding:20px}
+  .img-ph .ic{font-size:26px}
+  .img-ph span{font-size:12.5px;font-weight:600;max-width:200px}
+
+  @media(max-width:900px){
+    section{padding:72px 0}
+    .pain-grid,.learn-grid,.mentor-grid,.proof-grid{grid-template-columns:1fr}
+    .includes-grid{grid-template-columns:repeat(2,1fr)}
+    .nav .btn{display:none}
+    .sticky-cta{display:flex}
+    body{padding-bottom:76px}
+    .wa-float{bottom:94px;right:18px}
+    .countdown .unit{min-width:64px;padding:13px 8px 10px}
+    .countdown .unit b{font-size:25px}
+    .orb-1{width:300px;height:300px}
+  }
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <linearGradient id="logoGoldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0cd7a"/>
+      <stop offset="1" stop-color="#d4a942"/>
+    </linearGradient>
+  </defs>
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <path d="M32 5 L59 32 L32 59 L5 32 Z" fill="#0b0b0f" stroke="url(#logoGoldGrad)" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M32 20.1 L43.2 29.9 L40.05 29.9 L40.05 41.1 L23.95 41.1 L23.95 29.9 L20.8 29.9 Z" fill="#ffffff"/>
+    <path d="M28.85 33.4 L35.15 33.4 L35.15 41.1 L28.85 41.1 Z" fill="#0b0b0f"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="Corretor de Elite">
+      <svg class="logo-icon" viewBox="0 0 64 64"><use href="#logo-mark"/></svg>
+      <span class="logo-text">
+        <span class="l1">Imersão gratuita</span>
+        <span class="l2">Corretor de <span class="gold">Elite</span></span>
+      </span>
+    </a>
+    <a href="#inscricao" class="btn btn-gold">Garantir vaga <i data-lucide="arrow-right"></i></a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container hero-inner">
+    <span class="badge"><span class="dot"></span>Imersão 100% gratuita · Vagas limitadas</span>
+    <h1>Domine o mercado imobiliário com uma<br class="hero-break"> <span class="grad-text">imersão gratuita</span> em Blumenau.</h1>
+    <p class="lead">Uma imersão gratuita e direta ao ponto para corretores cansados de vender pouco, com quem já gerou milhões em VGV no mercado imobiliário.</p>
+    <div class="hero-cta">
+      <a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a>
+      <a href="#imersao" class="btn btn-ghost">Ver conteúdo da imersão</a>
+    </div>
+    <div class="hero-note">
+      <span><i data-lucide="zap"></i>Vagas limitadas</span>
+      <span><i data-lucide="badge-check"></i>Sem custo algum</span>
+      <span><i data-lucide="award"></i>Certificado de participação</span>
+    </div>
+
+    <div class="countdown-wrap">
+      <div class="countdown-label">As inscrições encerram em</div>
+      <div class="countdown" id="countdown" data-target="2026-07-23T20:00:00">
+        <div class="unit"><b id="cd-d">00</b><span>Dias</span></div>
+        <div class="unit"><b id="cd-h">00</b><span>Horas</span></div>
+        <div class="unit"><b id="cd-m">00</b><span>Min</span></div>
+        <div class="unit"><b id="cd-s">00</b><span>Seg</span></div>
+      </div>
+    </div>
+
+    <div class="scarcity">
+      <div class="scarcity-label"><span>Vagas preenchidas</span><b>87%</b></div>
+      <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Corretor de Elite <i class="sep">✦</i> Imersão gratuita <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+    <span>Corretor de Elite <i class="sep">✦</i> Imersão gratuita <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+  </div>
+</div>
+
+<section id="dores">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A verdade que ninguém te conta</span>
+      <h2>Se você se identifica com isso, precisa mudar agora</h2>
+      <p>Enquanto você espera o cliente aparecer, alguém já virou referência na sua região.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="glass-card reveal">
+        <div class="icon-chip"><i data-lucide="trending-down"></i></div>
+        <h3>Vendas na montanha-russa</h3>
+        <p>Meses bons seguidos de meses ruins, sem entender o motivo nem ter previsibilidade.</p>
+      </div>
+      <div class="glass-card reveal" style="transition-delay:.1s">
+        <div class="icon-chip"><i data-lucide="users"></i></div>
+        <h3>Virou "mais um" no mercado</h3>
+        <p>Compete por preço e comissão, em vez de ser procurado como especialista de confiança.</p>
+      </div>
+      <div class="glass-card reveal" style="transition-delay:.2s">
+        <div class="icon-chip"><i data-lucide="compass"></i></div>
+        <h3>Sem método, sem resultado</h3>
+        <p>Aprendeu a vender na tentativa e erro, sem um processo replicável que realmente funcione.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="imersao" class="learn">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">O que você vai levar</span>
+      <h2>Dentro da imersão <span class="grad-text">Corretor de Elite</span></h2>
+      <p>Conteúdo direto ao ponto, aplicado por quem vive o mercado imobiliário todos os dias.</p>
+    </div>
+    <div class="learn-grid">
+      <div class="learn-item reveal">
+        <div class="num">01</div>
+        <div><h3>Posicionamento de especialista</h3><p>Como deixar de ser "mais um corretor" e virar referência na sua região.</p></div>
+      </div>
+      <div class="learn-item reveal" style="transition-delay:.06s">
+        <div class="num">02</div>
+        <div><h3>Método de vendas de alta performance</h3><p>O passo a passo usado para gerar milhões em VGV, aplicável ao seu dia a dia.</p></div>
+      </div>
+      <div class="learn-item reveal" style="transition-delay:.12s">
+        <div class="num">03</div>
+        <div><h3>Como vender imóveis de alto padrão</h3><p>Domine argumentos técnicos que aumentam ticket médio e confiança do cliente.</p></div>
+      </div>
+      <div class="learn-item reveal" style="transition-delay:.18s">
+        <div class="num">04</div>
+        <div><h3>Relacionamento com construtoras</h3><p>Como se aproximar e fechar parcerias com as maiores construtoras da sua região.</p></div>
+      </div>
+      <div class="learn-item reveal" style="transition-delay:.24s">
+        <div class="num">05</div>
+        <div><h3>Gestão da carteira de clientes</h3><p>Organização e follow-up para nunca mais perder uma venda por falta de processo.</p></div>
+      </div>
+      <div class="learn-item reveal" style="transition-delay:.3s">
+        <div class="num">06</div>
+        <div><h3>Mentalidade de elite</h3><p>Os hábitos e a postura dos corretores que estão sempre no topo do mercado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mentors">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quem vai te ensinar</span>
+      <h2>Aprenda com quem já está no topo</h2>
+      <p>Dois especialistas com décadas de experiência e resultados reais no mercado imobiliário.</p>
+    </div>
+    <div class="mentor-grid">
+      <div class="glass-card mentor-card reveal">
+        <div class="mentor-photo"><img src="imagens/leonardo.webp" alt="Leonardo Farias" style="object-position:center 20%"></div>
+        <h3>Leonardo Farias</h3>
+        <span class="role"><i data-lucide="crown"></i>Especialista em Vendas Imobiliárias</span>
+        <p>Anos de experiência no mercado imobiliário, com milhões de reais em VGV gerado ao longo da carreira. Referência em transformar corretores comuns em vendedores de alta performance.</p>
+      </div>
+      <div class="glass-card mentor-card reveal" style="transition-delay:.12s">
+        <div class="mentor-photo"><img src="imagens/genaldo.png" alt="Genaldo Oliani" style="object-position:center 22%"></div>
+        <h3>Genaldo Oliani</h3>
+        <span class="role"><i data-lucide="building-2"></i>Diretor da Dinâmica Sul</span>
+        <p>Mais de 20 anos de experiência no mercado imobiliário. Já trabalhou com as maiores construtoras do sul do Brasil, com uma visão completa de negociação, incorporação e vendas de alto nível.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inclui">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Para quem é</span>
+      <h2>Essa imersão é para você que...</h2>
+    </div>
+    <div class="includes-grid">
+      <div class="glass-card include-card reveal">
+        <div class="icon-chip"><i data-lucide="key-round"></i></div>
+        <h3>É corretor de imóveis</h3>
+        <p>Iniciante ou experiente, buscando evoluir</p>
+      </div>
+      <div class="glass-card include-card reveal" style="transition-delay:.08s">
+        <div class="icon-chip"><i data-lucide="target"></i></div>
+        <h3>Quer previsibilidade</h3>
+        <p>Cansou de vendas inconsistentes</p>
+      </div>
+      <div class="glass-card include-card reveal" style="transition-delay:.16s">
+        <div class="icon-chip"><i data-lucide="rocket"></i></div>
+        <h3>Quer se destacar</h3>
+        <p>Ser referência, não mais um no mercado</p>
+      </div>
+      <div class="glass-card include-card reveal" style="transition-delay:.24s">
+        <div class="icon-chip"><i data-lucide="gem"></i></div>
+        <h3>Busca alto padrão</h3>
+        <p>Quer vender imóveis de maior ticket</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Resultados</span>
+      <h2>Corretores que já aplicaram esse método</h2>
+      <p>Espaço para depoimentos, substitua pelos cases reais.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="glass-card proof-card reveal">
+        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <div class="proof-person">
+          <div class="img-ph"><span class="ic">🖼️</span></div>
+          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+        </div>
+      </div>
+      <div class="glass-card proof-card reveal" style="transition-delay:.08s">
+        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <div class="proof-person">
+          <div class="img-ph"><span class="ic">🖼️</span></div>
+          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+        </div>
+      </div>
+      <div class="glass-card proof-card reveal" style="transition-delay:.16s">
+        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <div class="proof-person">
+          <div class="img-ph"><span class="ic">🖼️</span></div>
+          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inscricao" class="final">
+  <div class="container">
+    <span class="badge reveal"><span class="dot"></span>Últimas vagas disponíveis</span>
+    <h2 class="reveal">Garanta sua vaga na<br> <span class="grad-text">imersão Corretor de Elite</span></h2>
+    <p class="reveal">Gratuita, direta ao ponto e com vagas limitadas. Preencha o formulário abaixo e não fique de fora.</p>
+    <div class="scarcity reveal">
+      <div class="scarcity-label"><span>Vagas preenchidas</span><b>87%</b></div>
+      <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
+    </div>
+    <div class="form-slot reveal">
+      <span class="tag"><i data-lucide="clipboard-list" style="width:14px;height:14px"></i>Espaço reservado</span>
+      <h3>Formulário de inscrição</h3>
+      <p>Insira aqui o formulário de captação de leads (nome, WhatsApp, e-mail, cidade, etc.)</p>
+      <div class="form-placeholder">
+        [ FORMULÁRIO ENTRA AQUI ]
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#" class="logo" aria-label="Corretor de Elite">
+      <svg class="logo-icon" viewBox="0 0 64 64"><use href="#logo-mark"/></svg>
+      <span class="logo-text">
+        <span class="l1">Imersão gratuita</span>
+        <span class="l2">Corretor de <span class="gold">Elite</span></span>
+      </span>
+    </a>
+    <div>Imersão gratuita por Leonardo Farias &amp; Genaldo Oliani (Dinâmica Sul)</div>
+    <div class="copy">© 2026 Corretor de Elite. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.61 1.909 6.478L4 29l7.723-1.87A11.94 11.94 0 0016 27c6.628 0 12-5.373 12-12S22.629 3 16.001 3zm0 21.818c-1.97 0-3.803-.58-5.34-1.578l-.383-.24-4.583 1.11 1.132-4.47-.25-.398A9.77 9.77 0 016.182 15c0-5.421 4.398-9.818 9.819-9.818 5.42 0 9.818 4.397 9.818 9.818 0 5.421-4.398 9.818-9.818 9.818zm5.4-7.35c-.296-.148-1.75-.864-2.022-.963-.271-.099-.469-.148-.667.148-.198.297-.766.964-.939 1.162-.173.198-.346.223-.642.075-.296-.148-1.25-.46-2.381-1.469-.88-.785-1.474-1.754-1.647-2.05-.173-.297-.019-.457.13-.605.133-.132.296-.346.444-.519.148-.173.198-.297.296-.495.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51-.173-.008-.371-.01-.569-.01-.198 0-.52.074-.792.372-.271.297-1.038 1.014-1.038 2.474s1.063 2.87 1.212 3.068c.148.198 2.093 3.196 5.073 4.483.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.75-.716 1.996-1.407.247-.692.247-1.284.173-1.407-.074-.124-.271-.198-.568-.346z"/></svg>
+</a>
+
+<div class="sticky-cta">
+  <div class="txt"><b>Vagas quase esgotando</b><span>Imersão 100% gratuita</span></div>
+  <a href="#inscricao" class="btn btn-gold">Garantir vaga</a>
+</div>
+
+<script>
+  // Ícones Lucide
+  lucide.createIcons();
+
+  // TROCAR data-target no #countdown pela data real do evento
+  (function(){
+    var el = document.getElementById('countdown');
+    var target = new Date(el.dataset.target).getTime();
+    function tick(){
+      var diff = target - Date.now();
+      if (diff < 0) diff = 0;
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+      document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // Reveal on scroll (com fallback: se o observer não disparar, mostra tudo)
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    function showAll(){ els.forEach(function(el){ el.classList.add('in'); }); }
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    var fired = false;
+    var obs = new IntersectionObserver(function(entries){
+      fired = true;
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, {threshold:.12});
+    els.forEach(function(el){ obs.observe(el); });
+    setTimeout(function(){ if (!fired) { obs.disconnect(); showAll(); } }, 1200);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    # TROQUE "SEU_USUARIO_CPANEL" pelo seu usuário do cPanel (aparece no topo do painel).
+    - export DEPLOYPATH=/home/SEU_USUARIO_CPANEL/public_html/imersao/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R imagens $DEPLOYPATH

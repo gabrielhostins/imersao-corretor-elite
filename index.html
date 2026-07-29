@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Corretor de Elite | Imersão Gratuita para Corretores de Imóveis</title>
-<meta name="description" content="Imersão gratuita para corretores que querem se transformar em especialistas em vendas. Com Leonardo Farias e Genaldo Oliani. Vagas limitadas.">
+<title>Corretor Elite | Imersão para Corretores de Imóveis</title>
+<meta name="description" content="Imersão para corretores que querem se transformar em especialistas em vendas. Com Leonardo Farias e Genaldo Oliani. Vagas limitadas.">
 <!-- Fonte: Inter Tight -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,6 +125,9 @@
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
+  /* CTA de seção */
+  .section-cta{text-align:center;margin-top:50px}
+
   /* ========== DORES ========== */
   .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .glass-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:36px 30px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),border-color .4s}
@@ -169,9 +172,6 @@
   .proof-card .stars .lucide{width:16px;height:16px;color:var(--gold);fill:var(--gold)}
   .proof-card>p{color:var(--text-soft);font-size:14.5px;margin-bottom:22px;font-weight:500}
   .proof-person{display:flex;align-items:center;gap:13px}
-  .proof-person .img-ph{width:46px;height:46px;border-radius:50%;padding:0}
-  .proof-person .img-ph span{display:none}
-  .proof-person .img-ph .ic{font-size:16px}
   .proof-person b{font-size:14px;display:block;color:#fff;font-weight:600}
   .proof-person span{font-size:12.5px;color:var(--text-dim)}
 
@@ -180,6 +180,17 @@
   .final h2{font-size:clamp(32px,4.6vw,54px);color:#fff;margin-bottom:16px}
   .final>.container>p{color:var(--text-dim);font-size:17px;max-width:580px;margin:0 auto 26px;font-weight:500}
   .final .scarcity{margin:0 auto 44px}
+
+  /* PREÇO */
+  .price-box{max-width:340px;margin:0 auto 28px;padding:24px 28px;border-radius:22px;background:var(--glass);border:1px solid var(--glass-border);border-top:3px solid var(--gold);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+  .price-label{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--text-dim);font-weight:600;margin-bottom:8px}
+  .price-main{display:flex;align-items:baseline;justify-content:center;gap:8px;line-height:1;font-family:var(--font-display);font-weight:600}
+  .price-main .x{font-size:28px;color:var(--gold-2)}
+  .price-main .de{font-size:20px;font-weight:500;color:var(--text-soft)}
+  .price-main .amount{display:inline-flex;align-items:baseline;gap:3px;font-size:56px;background:linear-gradient(100deg,var(--gold-2) 10%,var(--gold) 60%,#a8842e 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .price-main .amount .cur{font-size:26px}
+  .price-sub{font-size:14.5px;color:var(--text-dim);font-weight:500;margin-top:10px}
+  .price-sub b{color:var(--text-soft);font-weight:600}
 
   .form-slot{max-width:530px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:28px;padding:44px 36px;position:relative;overflow:hidden}
   .form-slot::before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(255,255,255,.08),transparent 45%);pointer-events:none}
@@ -211,6 +222,24 @@
   .img-ph .ic{font-size:26px}
   .img-ph span{font-size:12.5px;font-weight:600;max-width:200px}
 
+  /* ========== MODAL DO FORMULÁRIO ========== */
+  .modal-overlay{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(5,5,8,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+  .modal-overlay.open{opacity:1;visibility:visible}
+  .modal-box{position:relative;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;background:linear-gradient(180deg,#15151c,#0d0d12);border:1px solid var(--glass-border);border-top:3px solid var(--gold);border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.6);padding:26px 22px 22px;transform:translateY(24px) scale(.98);transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .modal-overlay.open .modal-box{transform:none}
+  .modal-box::-webkit-scrollbar{width:8px}
+  .modal-box::-webkit-scrollbar-thumb{background:rgba(212,169,66,.4);border-radius:100px}
+  .modal-head{text-align:center;margin-bottom:18px;padding:0 10px}
+  .modal-head .eyebrow{margin-bottom:12px}
+  .modal-head h3{font-size:22px;color:#fff;line-height:1.15}
+  .modal-head h3 .grad-text{font-weight:600}
+  .modal-head p{color:var(--text-dim);font-size:14px;font-weight:500;margin-top:6px}
+  .modal-close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--glass-border);background:var(--glass);color:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;z-index:2}
+  .modal-close:hover{background:rgba(212,169,66,.15);border-color:var(--gold);transform:rotate(90deg)}
+  .modal-close .lucide{width:20px;height:20px}
+  .modal-box iframe{display:block;width:100%;border:none;border-radius:14px;background:#14141b;max-height:min(560px,58vh)}
+  body.modal-open{overflow:hidden}
+
   @media(max-width:900px){
     section{padding:72px 0}
     .pain-grid,.learn-grid,.mentor-grid,.proof-grid{grid-template-columns:1fr}
@@ -222,6 +251,8 @@
     .countdown .unit{min-width:64px;padding:13px 8px 10px}
     .countdown .unit b{font-size:25px}
     .orb-1{width:300px;height:300px}
+    .modal-box{padding:22px 14px 16px;border-radius:20px}
+    .modal-head h3{font-size:19px}
   }
 </style>
 </head>
@@ -243,11 +274,11 @@
 
 <header>
   <div class="container nav">
-    <a href="#" class="logo" aria-label="Corretor de Elite">
+    <a href="#" class="logo" aria-label="Corretor Elite">
       <svg class="logo-icon" viewBox="0 0 64 64"><use href="#logo-mark"/></svg>
       <span class="logo-text">
-        <span class="l1">Imersão gratuita</span>
-        <span class="l2">Corretor de <span class="gold">Elite</span></span>
+        <span class="l1">Imersão</span>
+        <span class="l2">Corretor <span class="gold">Elite</span></span>
       </span>
     </a>
     <a href="#inscricao" class="btn btn-gold">Garantir vaga <i data-lucide="arrow-right"></i></a>
@@ -262,22 +293,22 @@
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="container hero-inner">
-    <span class="badge"><span class="dot"></span>Imersão 100% gratuita · Vagas limitadas</span>
-    <h1>Domine o mercado imobiliário com uma<br class="hero-break"> <span class="grad-text">imersão gratuita</span> em Blumenau.</h1>
-    <p class="lead">Uma imersão gratuita e direta ao ponto para corretores cansados de vender pouco, com quem já gerou milhões em VGV no mercado imobiliário.</p>
+    <span class="badge"><span class="dot"></span>Inscrições abertas · Vagas limitadas</span>
+    <h1>Domine o mercado imobiliário com a<br class="hero-break"> <span class="grad-text">imersão Corretor Elite</span> em Blumenau.</h1>
+    <p class="lead">Uma imersão direta ao ponto para corretores cansados de vender pouco, com quem já gerou milhões em VGV no mercado imobiliário.</p>
     <div class="hero-cta">
       <a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a>
       <a href="#imersao" class="btn btn-ghost">Ver conteúdo da imersão</a>
     </div>
     <div class="hero-note">
       <span><i data-lucide="zap"></i>Vagas limitadas</span>
-      <span><i data-lucide="badge-check"></i>Sem custo algum</span>
+      <span><i data-lucide="badge-check"></i>Conteúdo aplicável</span>
       <span><i data-lucide="award"></i>Certificado de participação</span>
     </div>
 
     <div class="countdown-wrap">
       <div class="countdown-label">As inscrições encerram em</div>
-      <div class="countdown" id="countdown" data-target="2026-07-23T20:00:00">
+      <div class="countdown" id="countdown" data-target="2026-08-21T23:59:59">
         <div class="unit"><b id="cd-d">00</b><span>Dias</span></div>
         <div class="unit"><b id="cd-h">00</b><span>Horas</span></div>
         <div class="unit"><b id="cd-m">00</b><span>Min</span></div>
@@ -294,8 +325,8 @@
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Corretor de Elite <i class="sep">✦</i> Imersão gratuita <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
-    <span>Corretor de Elite <i class="sep">✦</i> Imersão gratuita <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+    <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+    <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +20 anos de mercado <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
   </div>
 </div>
 
@@ -323,6 +354,7 @@
         <p>Aprendeu a vender na tentativa e erro, sem um processo replicável que realmente funcione.</p>
       </div>
     </div>
+    <div class="section-cta reveal"><a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -330,7 +362,7 @@
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">O que você vai levar</span>
-      <h2>Dentro da imersão <span class="grad-text">Corretor de Elite</span></h2>
+      <h2>Dentro da imersão <span class="grad-text">Corretor Elite</span></h2>
       <p>Conteúdo direto ao ponto, aplicado por quem vive o mercado imobiliário todos os dias.</p>
     </div>
     <div class="learn-grid">
@@ -348,7 +380,7 @@
       </div>
       <div class="learn-item reveal" style="transition-delay:.18s">
         <div class="num">04</div>
-        <div><h3>Relacionamento com construtoras</h3><p>Como se aproximar e fechar parcerias com as maiores construtoras da sua região.</p></div>
+        <div><h3>Como trabalhar com lançamentos</h3><p>Como participar dos principais lançamentos e fechar parcerias com as construtoras da sua região.</p></div>
       </div>
       <div class="learn-item reveal" style="transition-delay:.24s">
         <div class="num">05</div>
@@ -359,6 +391,7 @@
         <div><h3>Mentalidade de elite</h3><p>Os hábitos e a postura dos corretores que estão sempre no topo do mercado.</p></div>
       </div>
     </div>
+    <div class="section-cta reveal"><a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -374,7 +407,7 @@
         <div class="mentor-photo"><img src="imagens/leonardo.webp" alt="Leonardo Farias" style="object-position:center 20%"></div>
         <h3>Leonardo Farias</h3>
         <span class="role"><i data-lucide="crown"></i>Especialista em Vendas Imobiliárias</span>
-        <p>Anos de experiência no mercado imobiliário, com milhões de reais em VGV gerado ao longo da carreira. Referência em transformar corretores comuns em vendedores de alta performance.</p>
+        <p>Anos de experiência no mercado imobiliário, com milhões de reais em VGV gerado ao longo da carreira. Referência em estruturação comercial e alta performance em vendas, transformando corretores comuns em vendedores de alto nível.</p>
       </div>
       <div class="glass-card mentor-card reveal" style="transition-delay:.12s">
         <div class="mentor-photo"><img src="imagens/genaldo.png" alt="Genaldo Oliani" style="object-position:center 22%"></div>
@@ -383,6 +416,7 @@
         <p>Mais de 20 anos de experiência no mercado imobiliário. Já trabalhou com as maiores construtoras do sul do Brasil, com uma visão completa de negociação, incorporação e vendas de alto nível.</p>
       </div>
     </div>
+    <div class="section-cta reveal"><a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -414,6 +448,7 @@
         <p>Quer vender imóveis de maior ticket</p>
       </div>
     </div>
+    <div class="section-cta reveal"><a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
@@ -422,70 +457,90 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Resultados</span>
       <h2>Corretores que já aplicaram esse método</h2>
-      <p>Espaço para depoimentos, substitua pelos cases reais.</p>
+      <p>O que os participantes falam sobre a experiência.</p>
     </div>
     <div class="proof-grid">
       <div class="glass-card proof-card reveal">
         <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <p>"Vou colocar em prática tudo o que aprendi. A imersão entrega um passo a passo tão prático e claro que tenho certeza de que vai alavancar meus negócios."</p>
         <div class="proof-person">
-          <div class="img-ph"><span class="ic">🖼️</span></div>
-          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+          <div><b>Rafael Meneghetti</b><span>Corretor · Blumenau/SC</span></div>
         </div>
       </div>
       <div class="glass-card proof-card reveal" style="transition-delay:.08s">
         <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <p>"Essa metodologia me deu as ferramentas exatas para aplicar no dia a dia. Se você quer ver seu negócio prosperar de verdade, este é o caminho."</p>
         <div class="proof-person">
-          <div class="img-ph"><span class="ic">🖼️</span></div>
-          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+          <div><b>Juliana Broering</b><span>Corretora · Gaspar/SC</span></div>
         </div>
       </div>
       <div class="glass-card proof-card reveal" style="transition-delay:.16s">
         <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
-        <p>"Depoimento de corretor(a) sobre os resultados obtidos após aplicar o método. Substituir por depoimento real."</p>
+        <p>"Dois dias de conteúdo simplesmente magnífico! Uma experiência leve, direta ao ponto e sem enrolação. Valeu demais a pena."</p>
         <div class="proof-person">
-          <div class="img-ph"><span class="ic">🖼️</span></div>
-          <div><b>Nome do corretor(a)</b><span>Cidade / Imobiliária</span></div>
+          <div><b>Anderson Reblin</b><span>Corretor · Indaial/SC</span></div>
         </div>
       </div>
     </div>
+    <div class="section-cta reveal"><a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a></div>
   </div>
 </section>
 
 <section id="inscricao" class="final">
   <div class="container">
     <span class="badge reveal"><span class="dot"></span>Últimas vagas disponíveis</span>
-    <h2 class="reveal">Garanta sua vaga na<br> <span class="grad-text">imersão Corretor de Elite</span></h2>
-    <p class="reveal">Gratuita, direta ao ponto e com vagas limitadas. Preencha o formulário abaixo e não fique de fora.</p>
+    <h2 class="reveal">Garanta sua vaga na<br> <span class="grad-text">imersão Corretor Elite</span></h2>
+    <p class="reveal">Direta ao ponto e com vagas limitadas. Garanta a sua vaga agora e não fique de fora.</p>
+    <div class="price-box reveal">
+      <div class="price-label">Investimento</div>
+      <div class="price-main"><span class="x">4x</span><span class="de">de</span><span class="amount"><span class="cur">R$</span>147</span></div>
+      <div class="price-sub">ou <b>R$497 à vista</b></div>
+    </div>
     <div class="scarcity reveal">
       <div class="scarcity-label"><span>Vagas preenchidas</span><b>87%</b></div>
       <div class="scarcity-bar"><div class="scarcity-fill"></div></div>
     </div>
-    <div class="form-slot reveal">
-      <span class="tag"><i data-lucide="clipboard-list" style="width:14px;height:14px"></i>Espaço reservado</span>
-      <h3>Formulário de inscrição</h3>
-      <p>Insira aqui o formulário de captação de leads (nome, WhatsApp, e-mail, cidade, etc.)</p>
-      <div class="form-placeholder">
-        [ FORMULÁRIO ENTRA AQUI ]
-      </div>
+    <div class="reveal" style="margin-top:8px">
+      <a href="#" class="btn btn-gold js-open-form" style="font-size:17px;padding:20px 40px">Quero minha vaga agora <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
 
 </main>
 
+<!-- MODAL DO FORMULÁRIO DE INSCRIÇÃO -->
+<div class="modal-overlay" id="formModal" role="dialog" aria-modal="true" aria-labelledby="formModalTitle">
+  <div class="modal-box">
+    <button type="button" class="modal-close" id="formModalClose" aria-label="Fechar"><i data-lucide="x"></i></button>
+    <div class="modal-head">
+      <span class="eyebrow">Inscrição</span>
+      <h3 id="formModalTitle">Garanta sua vaga na <span class="grad-text">imersão</span></h3>
+      <p>Preencha seus dados abaixo. Vagas limitadas.</p>
+    </div>
+    <iframe
+      id="JotFormIFrame-262088131666056"
+      title="Garanta sua vaga"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/262088131666056"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:539px;border:none;"
+      scrolling="auto">
+    </iframe>
+  </div>
+</div>
+
 <footer>
   <div class="container">
-    <a href="#" class="logo" aria-label="Corretor de Elite">
+    <a href="#" class="logo" aria-label="Corretor Elite">
       <svg class="logo-icon" viewBox="0 0 64 64"><use href="#logo-mark"/></svg>
       <span class="logo-text">
-        <span class="l1">Imersão gratuita</span>
-        <span class="l2">Corretor de <span class="gold">Elite</span></span>
+        <span class="l1">Imersão</span>
+        <span class="l2">Corretor <span class="gold">Elite</span></span>
       </span>
     </a>
-    <div>Imersão gratuita por Leonardo Farias &amp; Genaldo Oliani (Dinâmica Sul)</div>
-    <div class="copy">© 2026 Corretor de Elite. Todos os direitos reservados.</div>
+    <div>Imersão por Leonardo Farias &amp; Genaldo Oliani (Dinâmica Sul)</div>
+    <div class="copy">© 2026 Corretor Elite. Todos os direitos reservados.</div>
   </div>
 </footer>
 
@@ -494,7 +549,7 @@
 </a>
 
 <div class="sticky-cta">
-  <div class="txt"><b>Vagas quase esgotando</b><span>Imersão 100% gratuita</span></div>
+  <div class="txt"><b>Vagas quase esgotando</b><span>Inscrições abertas</span></div>
   <a href="#inscricao" class="btn btn-gold">Garantir vaga</a>
 </div>
 
@@ -537,7 +592,23 @@
     els.forEach(function(el){ obs.observe(el); });
     setTimeout(function(){ if (!fired) { obs.disconnect(); showAll(); } }, 1200);
   })();
+
+  // Modal do formulário (abre nos botões .js-open-form)
+  (function(){
+    var overlay = document.getElementById('formModal');
+    var closeBtn = document.getElementById('formModalClose');
+    function openModal(e){ if(e) e.preventDefault(); overlay.classList.add('open'); document.body.classList.add('modal-open'); }
+    function closeModal(){ overlay.classList.remove('open'); document.body.classList.remove('modal-open'); }
+    document.querySelectorAll('.js-open-form').forEach(function(btn){ btn.addEventListener('click', openModal); });
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal(); });
+  })();
 </script>
+
+<!-- Handler de redimensionamento do JotForm -->
+<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-262088131666056']", "https://form.jotform.com/")</script>
 
 </body>
 </html>

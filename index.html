@@ -106,6 +106,14 @@
   .hero-note span{display:inline-flex;align-items:center;gap:7px}
   .hero-note .lucide{width:15px;height:15px;color:var(--gold)}
 
+  /* DATA E LOCAL DO EVENTO */
+  .event-info{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;max-width:660px;margin:0 auto}
+  .ei-item{display:flex;align-items:center;gap:13px;background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:14px 22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:left}
+  .ei-item .ei-ic{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,rgba(212,169,66,.22),rgba(212,169,66,.06));border:1px solid rgba(212,169,66,.3)}
+  .ei-item .ei-ic svg{width:20px;height:20px;stroke:var(--gold-2);stroke-width:1.8;fill:none}
+  .ei-item b{display:block;font-size:15.5px;color:#fff;font-weight:600;line-height:1.2}
+  .ei-item span{font-size:12.5px;color:var(--text-dim)}
+
   /* Countdown glass */
   .countdown-wrap{margin-top:52px}
   .countdown-label{font-size:11.5px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.22em;margin-bottom:16px;font-weight:600}
@@ -309,6 +317,16 @@
     <span class="badge"><span class="dot"></span>Inscrições abertas · Vagas limitadas</span>
     <h1>Domine o mercado imobiliário com a<br class="hero-break"> <span class="grad-text">imersão Corretor Elite</span> em Blumenau.</h1>
     <p class="lead">Uma imersão direta ao ponto para corretores cansados de vender pouco, com quem já gerou milhões em VGV no mercado imobiliário.</p>
+    <div class="event-info" style="margin-bottom:36px">
+      <div class="ei-item">
+        <span class="ei-ic"><i data-lucide="calendar-days"></i></span>
+        <div><b>21 e 22 de agosto</b><span>Dois dias de imersão</span></div>
+      </div>
+      <div class="ei-item">
+        <span class="ei-ic"><i data-lucide="map-pin"></i></span>
+        <div><b>Sede da Dinâmica Sul</b><span>Blumenau/SC</span></div>
+      </div>
+    </div>
     <div class="hero-cta">
       <a href="#inscricao" class="btn btn-gold">Quero minha vaga agora <i data-lucide="arrow-right"></i></a>
       <a href="#imersao" class="btn btn-ghost">Ver conteúdo da imersão</a>
@@ -506,6 +524,16 @@
     <span class="badge reveal"><span class="dot"></span>Últimas vagas disponíveis</span>
     <h2 class="reveal">Garanta sua vaga na<br> <span class="grad-text">imersão Corretor Elite</span></h2>
     <p class="reveal">Direta ao ponto e com vagas limitadas. Garanta a sua vaga agora e não fique de fora.</p>
+    <div class="event-info reveal" style="margin-bottom:34px">
+      <div class="ei-item">
+        <span class="ei-ic"><i data-lucide="calendar-days"></i></span>
+        <div><b>21 e 22 de agosto</b><span>Dois dias de imersão</span></div>
+      </div>
+      <div class="ei-item">
+        <span class="ei-ic"><i data-lucide="map-pin"></i></span>
+        <div><b>Sede da Dinâmica Sul</b><span>Blumenau/SC</span></div>
+      </div>
+    </div>
     <div class="price-box reveal">
       <div class="price-label">Investimento</div>
       <div class="price-main"><span class="x">4x</span><span class="de">de</span><span class="amount"><span class="cur">R$</span>147</span></div>

@@ -5,3 +5,4 @@ deployment:
     - export DEPLOYPATH=/home/dinamic1/public_html/imersao/
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R imagens $DEPLOYPATH
+    - /bin/cp -R obrigado $DEPLOYPATH

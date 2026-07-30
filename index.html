@@ -106,6 +106,7 @@
   @keyframes fillIn{from{width:0}}
 
   /* ========== MARQUEE ========== */
+  .marquee-wrap{overflow:hidden;position:relative;z-index:2}
   .marquee{background:linear-gradient(100deg,var(--gold-deep),var(--gold) 40%,var(--gold-2) 75%,var(--gold));padding:15px 0;overflow:hidden;white-space:nowrap;position:relative;transform:rotate(-.6deg) scale(1.01);margin:-6px 0}
   .marquee-track{display:inline-flex;gap:44px;animation:scroll 26s linear infinite;will-change:transform}
   .marquee span{display:inline-flex;align-items:center;gap:44px;font-family:var(--font-display);font-weight:600;font-size:15px;letter-spacing:.16em;color:#171204;text-transform:uppercase}
@@ -317,10 +318,12 @@
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +30 anos de experiência <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
-    <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +30 anos de experiência <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +30 anos de experiência <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+      <span>Corretor Elite <i class="sep">✦</i> Alta performance <i class="sep">✦</i> Blumenau · SC <i class="sep">✦</i> Vagas limitadas <i class="sep">✦</i> +30 anos de experiência <i class="sep">✦</i> Milhões em VGV <i class="sep">✦</i></span>
+    </div>
   </div>
 </div>
 
